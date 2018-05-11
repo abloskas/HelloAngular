@@ -10,7 +10,8 @@ require('./server/config/routes.js')(app)
 //mongoose.js in config
 require("./server/config/mongoose");
 
-
+//angular
+app.use(express.static( __dirname + '/HelloAngular/dist/HelloAngular' ));
 
 // Setting our Server to Listen on Port: 8000
 app.listen(8000, function() {
