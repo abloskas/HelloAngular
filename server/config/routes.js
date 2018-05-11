@@ -1,20 +1,24 @@
 var mongoose = require('mongoose');
-const persons = require('../controllers/persons');
+const tasks = require('../controllers/tasks');
 
 module.exports = function(app){
-    app.get('/', function(req, res) {
-        persons.index(req, res);
+    app.get('/tasks', function(req, res) {
+        tasks.index(req, res);
     })
 
-    app.get('/new/:name', function(req, res) {
-        persons.create(req, res);
+    app.post('/tasks', function(req, res) {
+        tasks.create(req, res);
     })
 
-    app.get('/remove/:name', function(req, res) {
-        persons.delete(req, res);
+    app.post('/tasks/delete/:id', function(req, res) {
+        tasks.delete(req, res);
     })
 
-    app.get('/:name', function(req, res) {
-        persons.show(req, res);
+    app.get('/tasks/:id', function(req, res) {
+        tasks.show(req, res);
+    })
+
+    app.put('/tasks/:id', function(req, res) {
+        tasks.update(req, res);
     })
 }

@@ -5,7 +5,7 @@ var path = require('path');
 const fs = require("fs");
 
 var models_path = path.join(__dirname, './../models');
-mongoose.connect('mongodb://localhost/1955_API');
+mongoose.connect('mongodb://localhost/RESTful_Task_API');
 fs.readdirSync(models_path).forEach(function(file) {
     if(file.indexOf('.js') >= 0) {
       require(models_path + '/' + file);
