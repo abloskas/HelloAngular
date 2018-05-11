@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,19 @@ import { HttpService } from './http.service';
 })
 export class AppComponent {
   title = 'MEAN';
+  tasks = [];
+
   constructor(private _httpService: HttpService){}
+  ngOnInit(){
+    this.getTasksFromService();
+  }
+  getTasksFromService(){
+    let observable = this._httpService.getTasks();
+    observable.subscribe(data => {
+      console.log("Got our tasks!", data)
+      this.tasks = data['tasks'];
+    });
+}
+
 }
 
