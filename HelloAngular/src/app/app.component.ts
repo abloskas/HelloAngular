@@ -8,7 +8,7 @@ import { HttpService } from './http.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MEAN';
+  title = 'RESTful API';
   tasks = [];
 
   constructor(private _httpService: HttpService){}
@@ -19,7 +19,7 @@ export class AppComponent {
     let observable = this._httpService.getTasks();
     observable.subscribe(data => {
       console.log("Got our tasks!", data)
-      this.tasks = data['tasks'];
+      this.tasks = data['data'];
     });
 }
 
