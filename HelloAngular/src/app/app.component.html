@@ -5,22 +5,22 @@
   <br>
   <h2>The First Task:</h2>
   <ul>
-    <li>{{tasks[0]['title']}} - {{tasks[0].description}}; Completed? {{tasks[0].completed}}</li>
+    <li *ngIf="tasks[0]">{{tasks[0]['title']}} - {{tasks[0].description}}; Completed? {{tasks[0].completed}}</li>
   </ul>
   <br>
   <h2>The Second Task:</h2>
   <ul>
-    <li>{{tasks[1].title}} - {{tasks[1].description}}; Completed? {{tasks[1].completed}}</li>
+    <li *ngIf="tasks[1]">{{tasks[1].title}} - {{tasks[1].description}}; Completed? {{tasks[1].completed}}</li>
   </ul> 
   <br>
   <h2>The Third Task:</h2>
   <ul>
-    <li>{{tasks[2].title}} - {{tasks[2].description}}; Completed? {{tasks[2].completed}}</li>
+    <li *ngIf="tasks[2]">{{tasks[2].title}} - {{tasks[2].description}}; Completed? {{tasks[2].completed}}</li>
   </ul> 
   <br>
   <h2>The Fourth Task:</h2>
   <ul>
-    <li>{{tasks[3].title}} - {{tasks[3].description}}; Completed? {{tasks[3].completed}}</li>
+    <li *ngIf="tasks[3]">{{tasks[3].title}} - {{tasks[3].description}}; Completed? {{tasks[3].completed}}</li>
   </ul> 
   
 
