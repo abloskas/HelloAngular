@@ -17,4 +17,8 @@ getTasks(){
   return this._http.get('/tasks');
 }
 
+getTasksbyId(id: string){
+  return this._http.get(`/tasks/${id}`);
+}
+
 }
