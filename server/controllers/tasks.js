@@ -19,7 +19,7 @@ module.exports.create = function(req, res){
             res.json({message: "Error", error: err});
         }
         else {
-            res.send(task);
+            res.json(task);
         }
     })
 
@@ -31,7 +31,7 @@ module.exports.delete = function(req, res){
         res.json({message: "Error", error: err});
     }
         else {
-            res.send("Deleted this Task");
+            res.json({message: "success"});
     }
    })
 }

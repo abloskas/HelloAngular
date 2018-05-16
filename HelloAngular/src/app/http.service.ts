@@ -11,9 +11,6 @@ export class HttpService {
 
   
 getTasks(){
-  // let tempObservable = this._http.get('/tasks');
-  // tempObservable.subscribe(data => console.log("Got our tasks!", data));
-
   return this._http.get('/tasks');
 }
 
@@ -21,4 +18,17 @@ getTasksbyId(id: string){
   return this._http.get(`/tasks/${id}`);
 }
 
+
+postTasks(newTask){
+  return this._http.post('/tasks', newTask);
 }
+
+editTasks(editTask){
+  return this._http.put(`/tasks/${editTask._id}`, editTask);
+}
+
+deleteTasksbyId(id: string){
+  return this._http.post(`/tasks/delete/${id}`, {});
+}
+}
+
